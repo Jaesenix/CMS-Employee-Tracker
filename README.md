@@ -8,6 +8,7 @@ Design the following database schema containing three tables:
 
 ![Database Schema](Assets/schema.png)
 
+![Menu](Menu.png)
 * **department**:
 
   * **id** - INT PRIMARY KEY
