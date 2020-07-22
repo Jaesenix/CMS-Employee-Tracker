@@ -183,16 +183,43 @@ function addDepartment() {
         })
 };
 
-// function viewEmployees() {
-//     var query = "SELECT employee.first_name, employee.last_name, employee.role_id, employee.manager_id ";
-//     query += "FROM employee INNER JOIN role ON employee.id = role.id";
-//     query += "FROM role INNER JOIN department on role.id = department.id";
+function viewEmployees() {
+    var query = connection.query(query, function (err, res) {
+        for (var i = 0; i < res.length; i++) {
+            console.log(res[i].query);
+        }
+    });
+};
 
-//     connection.query(query, [answer.first_name, answer.last_name, answer.role_id, answer.manager_id], function(err, res) {
-//         console.log(res.length + " matches found!");
-//         for (var i = 0; i < res.length; i++) {
-//             console.table(viewEmployees);
-//         }
-//     })
+// function updateEmployeeRole() {
+//     // connection.query("SELECT * FROM role", function (err, results) {
+//     //     if (err) throw err;
+//         inquirer
+//             .prompt([
+//                 {
+//                     name: "update",
+//                     type: "list",
+//                     message: "Would you like to update employee's title?",
+//                     choices: [
+//                         "Update Employee Title"
+//                     ],
+//                 }
+//                     .then(function (answer) {
+//                         connection.query(
+//                             "UPDATE role SET ?",
+//                             [
+//                                 {
+//                                     title: answer.title
+//                                 },
+//                             ],
+//                             function (err) {
+//                                 if (err) throw err;
+//                                 console.log("Employee Role Updated!");
+//                                 start();
+//                             }
+//                         )
+//                     })
+//             ])
+//     // })
 // };
 
